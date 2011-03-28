@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery Flickry</title>
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+		<!-- syntax highlighting -->
+		<link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDjango.css" rel="stylesheet" />
+		<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js"></script>
+		<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJScript.js"></script>
+		<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushXml.js"></script>
+		<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCss.js"></script>
+		<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js"></script>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div id="wrapper">
+			<header>
+				<h1>jQuery Flickry</h1>
+			</header>
+			<nav>
+				<ul class="nav ie-is-stupid">
+					<li class="selected"><a href="#home">Home</a></li>
+					<li><a href="#options">Options</a></li>
+					<li><a href="#examples">Examples</a></li>
+				</ul>
+			</nav>
+			
+			<div id="home">
+				<h1>Thank you!</h1>
+				<p>In order to get you up and running as fast as possible this documentation is split up into three areas:</p>
+				<ul>
+					<li>This page: below you'll see a quickstart to get you up and running in no time.</li>
+					<li>Options: an overview of all the options you can use to customize this plugin.</li>
+					<li>Examples: a list of examples using all the options</li>
+				</ul>
+				
+				<h1>Features</h1>
+				<ul>
+					<li>Embed your Flickr photos easily on your site.</li>
+					<li>Full Javascript widget. No flash required.</li>
+					<li>Easy markup, no need to write lots of Javascript.</li>
+					<li>Clear CSS styling</li>
+					<li>Keyboard navigation</li>
+				</ul>
+				
+				<h1>Quickstart</h1>				
+				<h2>Step 1: Include jQuery on your page</h2>
+				<p>Either use your own hosted version or use the Google <abbr title="Content Delivery Network">CDN</abbr> <em>(recommended)</em>.</p>
+				<pre class="brush: xml">
+					&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js">&lt;/script>
+				</pre>
+				<p><small>Note: although jQuery 1.4.3 is loaded here, this plugin should work with all future versions of jQuery (and will be patched if it doesn't). You can easily load the latest version of jQuery by changing 1.4.3 to 1. To learn more about Google CDN versioning click <a href="http://code.google.com/intl/nl-NL/apis/libraries/devguide.html#versioning">here</a>.</small></p>
+				
+				
+				<h2>Step 2: Include the Flickry plugin</h2>
+				<p>Include the plugin in the <em>&lt;head&gt;</em> of your page:</p>
+				<pre class="brush: xml">
+					&lt;script src="/flickry/js/jquery.flickry.min.js">&lt;/script>
+				</pre>
+				
+				<p><small>Note:</small> make sure the paths point to the location where you've uploaded the files.</p>
+								
+				<h2>Step 3: Create a div where the widget should come</h2>
+				<pre class="brush: xml">
+					&lt;div class="gallery" data-set-id="72157625374372176">&lt;/div>
+				</pre>
+
+				
+				<h2>Step 5: Initialize the Flickry plugin</h2>
+				<p>Place this snippet of code in your main javascript file or include it between &lt;script&gt; tags in your document</p>
+				<pre class="brush: js">
+					$(document).ready(function() { 
+						$('.gallery').flickry();	
+					});				
+				</pre>
+
+				<h2>Step 6: it works!</h2>
+				<p>You should now see a widget for the set!</em></p>
+				
+				
+								
+			</div>
+			<div id="options">
+				<h1>Options</h1>
+				<h2>Tag attributes</h2>
+				<p>In the quickstart you saw you could pass the set id in the div tag. You can pass these attributes:</p>
+				<table class="fancy_table">
+					<thead>
+						<tr>
+							<th>Option name</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>data-set-id</td>
+							<td>The id of the set to load. You can find this value in the URL when you browse to a set on Flickr.</td>
+						</tr>
+						<tr>
+							<td>data-user-id</td>
+							<td>The id of owner of a photo stream to load. You can find this id by using this tool: <a href="http://idgettr.com/">idgettr.com</a></td>
+						</tr>
+						<tr>
+							<td>data-search</td>
+							<td>A string to search for. If you also pass a user-id then it will search this user's photos.</td>
+						</tr>
+						<tr>
+							<td>data-limit</td>
+							<td>The amount of photos to show.</td>
+						</tr>
+					</tbody>
+				</table>
+				<p>These are the settings you can pass the function call:</p>								
+				<table class="fancy_table">
+					<thead>
+						<tr>
+							<th>Option name</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>api</td>
+							<td>An object containing an url and a key. Normally you should not change this.</td>
+						</tr>
+						<tr>
+							<td>thumbnailSize</td>
+							<td><em>default: 25</em><br />The size of the thumbnails.</td>
+						</tr>
+						<tr>
+							<td>keyboardControl</td>
+							<td><em>default: true</em><br />Whether to enable keyboard control.</td>
+						</tr>
+						<tr>
+							<td>keyboardOnHover</td>
+							<td><em>default: true</em><br />If this is set to true the keyboard controls only work when the mouse is hovering the element.</td>
+						</tr>
+						<tr>
+							<td>setId<br />userId<br />search<br />limit</td>
+							<td>See above</td>
+						</tr>
+						<tr>
+							<td>fadeDuration</td>
+							<td><em>default: 250</em><br />The duration of the fade effect in milliseconds.</td>
+						</tr>						
+					</tr>
+					</tbody>					
+				</table>	
+	
+			</div>
+			<div id="examples">
+				<h1>Examples</h1>
+				<p><small>Note: examples will open in a new browser window. Make sure you're viewing this document on your server when trying the samples.</small></p>
+				<ul>
+					<li><a target="_blank" href="demo.html">Basic</a> (three widgets)</li>
+					
+					
+				</ul>
+				<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+				<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+				<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+				
+			</div>
+		
+		</div>
+		
+		
+		<script type="text/javascript">
+			$(document).ready(function() { 
+				$('ul.nav li a').bind('click', function(e) { 
+					e.stopPropagation();
+					$('nav ul li').removeClass('selected');
+					$(this).parent().addClass('selected');
+					$('#wrapper > div:visible').fadeOut();
+					$($(this).attr('href')).fadeIn();
+					return false;
+				
+				});	
+			});
+		
+    	 SyntaxHighlighter.all();
+		</script>
+	</body>
+</html>

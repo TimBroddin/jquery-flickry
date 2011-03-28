@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery Flickry</title>
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+		<script src="js/jquery.flickry.min.js"></script>
+		
+		<!-- syntax highlighting -->
+		<link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDjango.css" rel="stylesheet" />
+		<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js"></script>
+		<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJScript.js"></script>
+		<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushXml.js"></script>
+		<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCss.js"></script>
+		<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js"></script>		
+		
+		<link rel="stylesheet" href="css/jquery.flickry.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		
+	</head>
+	<body>
+		<div id="demo-wrapper">	
+			<p>Keyboard navigation is enabled. Just hover over a set and control it with your keyboard.</p>
+			<h1>A simple set</h1>
+			<div class="gallery" data-set-id="72157625374372176"></div>
+			<pre class="brush: js">
+				&lt;div class="gallery" data-set-id="72157625374372176">&lt;/div>
+			</pre>
+			<h1>Search for "tokyo"</h1>
+			<div class="gallery" data-search="tokyo" data-limit="20" data-effect-in="slideUp" data-effect-out="slideDown"></div>
+			<pre class="brush: js">
+				&lt;div class="gallery" data-search="tokyo" data-limit="20">&lt;/div>
+			</pre>
+			<h1>My photo stream</h1>
+			<div class="gallery" data-user-id="10419343@N00" data-limit="50"></div>		
+			<pre class="brush: js">
+				&lt;div class="gallery" data-user-id="10419343@N00" data-limit="50">&lt;/div>
+			</pre>	
+		</div>		
+		<script type="text/javascript">
+		$().ready(function() {
+			SyntaxHighlighter.all();
+			$('.gallery').flickry();
+							
+		});
+		</script>
+	</body>
+</html>

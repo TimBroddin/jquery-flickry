@@ -1,0 +1,43 @@
+.flickry {
+	background-color: #111;
+	overflow: hidden;
+	color: white;
+}
+
+.flickry-viewer {
+	position: relative;
+	width: 700px;
+	height: 500px;
+	
+}
+
+.flickry-viewer div.image {
+	position: absolute;
+	width: 700px;
+	line-height: 500px;
+	z-index: 777;
+	text-align: center;	
+}
+
+.flickry-viewer div.image img {
+	vertical-align: middle;
+
+	cursor: pointer;
+}
+
+.flickry-thumbnails {
+	margin: 10px;
+	margin-top: 20px;
+	z-index: 2;
+	clear: both;
+}
+
+.flickry-thumbnails img {
+	margin-right: 5px;
+	cursor: pointer;
+	opacity: 0.6;
+}
+
+.flickry-thumbnails img:hover, .flickry-thumbnails img.hover {
+	opacity: 1;
+}
